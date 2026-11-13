@@ -3,63 +3,64 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ScheduleDay;
 use Illuminate\Http\Request;
 
 class ScheduleDayController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $days = ScheduleDay::orderBy('date', 'asc')->get();
+        // Cambiamos la ruta a la vista correcta
+        return view('admin.activities.index', ['scheduleDays' => $days, 'speakers' => \App\Models\Speaker::all()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        // No necesitamos vista aquí porque usamos modales
+        return redirect()->route('admin.activities.index');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'date' => 'required|date|unique:schedule_days,date',
+            'title' => 'required|string|max:255'
+        ]);
+
+        ScheduleDay::create($request->all());
+
+        // CORRECCIÓN AQUÍ: Redireccionar al index de actividades
+        return redirect()->route('admin.activities.index')
+            ->with('success', 'Día agregado al cronograma.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(ScheduleDay $scheduleDay)
     {
-        //
+        return redirect()->route('admin.activities.index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit(ScheduleDay $scheduleDay)
     {
-        //
+        return redirect()->route('admin.activities.index');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, ScheduleDay $scheduleDay)
     {
-        //
+        $request->validate([
+            'date' => 'required|date|unique:schedule_days,date,' . $scheduleDay->id,
+            'title' => 'required|string|max:255'
+        ]);
+        
+        $scheduleDay->update($request->all());
+        return redirect()->route('admin.activities.index')->with('success', 'Día actualizado.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(ScheduleDay $scheduleDay)
     {
-        //
+        $scheduleDay->delete();
+        // CORRECCIÓN AQUÍ: Redireccionar al index de actividades
+        return redirect()->route('admin.activities.index')
+            ->with('success', 'Día eliminado correctamente.');
     }
 }

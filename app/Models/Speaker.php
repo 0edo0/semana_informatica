@@ -9,8 +9,15 @@ class Speaker extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'profession', 'bio', 'photo_path'];
+    // Campos que permitimos guardar desde formularios
+    protected $fillable = [
+        'name', 
+        'profession', 
+        'bio', 
+        'photo_path'
+    ];
 
+    // Relación: Un ponente dicta muchas actividades
     public function activities()
     {
         return $this->hasMany(Activity::class);

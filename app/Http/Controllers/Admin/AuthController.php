@@ -14,7 +14,6 @@ class AuthController extends Controller
         return view('admin.auth.login');
     }
 
-    // Procesar el login
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -22,7 +21,7 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-        // Usamos el guard 'admin' (lo configuraremos más adelante)
+        // Usamos Auth::guard('admin') porque son administradores, no usuarios normales
         if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended(route('admin.dashboard'));

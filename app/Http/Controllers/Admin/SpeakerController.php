@@ -3,63 +3,93 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Speaker;
 use Illuminate\Http\Request;
+use Cloudinary\Cloudinary;
 
 class SpeakerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $cloudinary;
+
+    public function __construct()
+    {
+        // Inicializamos Cloudinary con la URL del .env
+        $this->cloudinary = new Cloudinary(env('CLOUDINARY_URL'));
+    }
+
     public function index()
     {
-        //
+        $speakers = Speaker::latest()->paginate(10);
+        return view('admin.speakers.index', compact('speakers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.speakers.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'profession' => 'nullable|string|max:255',
+            'bio' => 'nullable|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120'
+        ]);
+
+        $data = $request->except('photo');
+
+        if ($request->hasFile('photo')) {
+            // Subir a Cloudinary usando el paquete oficial
+            $result = $this->cloudinary->uploadApi()->upload(
+                $request->file('photo')->getRealPath(),
+                ['folder' => 'devfest_ponentes']
+            );
+            
+            // Guardamos la URL segura (https)
+            $data['photo_path'] = $result['secure_url'];
+        }
+
+        Speaker::create($data);
+
+        return redirect()->route('admin.speakers.index')
+            ->with('success', 'Ponente registrado exitosamente.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function edit(Speaker $speaker)
     {
-        //
+        return view('admin.speakers.edit', compact('speaker'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request, Speaker $speaker)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'profession' => 'nullable|string|max:255',
+            'bio' => 'nullable|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120'
+        ]);
+
+        $data = $request->except('photo');
+
+        if ($request->hasFile('photo')) {
+            $result = $this->cloudinary->uploadApi()->upload(
+                $request->file('photo')->getRealPath(),
+                ['folder' => 'devfest_ponentes']
+            );
+            $data['photo_path'] = $result['secure_url'];
+        }
+
+        $speaker->update($data);
+
+        return redirect()->route('admin.speakers.index')
+            ->with('success', 'Ponente actualizado correctamente.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(Speaker $speaker)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $speaker->delete();
+        return redirect()->route('admin.speakers.index')
+            ->with('success', 'Ponente eliminado correctamente.');
     }
 }

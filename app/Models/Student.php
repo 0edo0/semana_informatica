@@ -13,6 +13,12 @@ class Student extends Model
         'dni', 'first_name', 'last_name', 'email', 'phone', 'semester', 'career'
     ];
 
+    
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
     // Relaciones
     public function attendances()
     {

@@ -11,7 +11,7 @@ class ScheduleDay extends Model
 
     protected $fillable = ['date', 'title'];
 
-    // Un día tiene muchas actividades
+    // Relación: Un día tiene muchas actividades
     public function activities()
     {
         return $this->hasMany(Activity::class);

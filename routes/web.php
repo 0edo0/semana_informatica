@@ -55,6 +55,8 @@ Route::post('/certificados/buscar', [PublicCertificateController::class, 'find']
 | RUTAS DE ADMINISTRACIÓN (CMS)
 |--------------------------------------------------------------------------
 */
+Route::get('/admin/login', [App\Http\Controllers\Admin\AuthController::class, 'showLogin'])->name('admin.login');
+Route::post('/admin/login', [App\Http\Controllers\Admin\AuthController::class, 'login'])->name('admin.login.submit');
 
 // Rutas de Login (No requieren estar logueado)
 Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
