@@ -5,14 +5,14 @@
 @section('content')
 
     {{-- ================================================= --}}
-    {{--  DEV FEST 2026 · Dashboard del CMS                --}}
+    {{--  EXPO DEV 2026 · Dashboard del CMS                --}}
     {{-- ================================================= --}}
 
     {{-- ===== Encabezado de bienvenida ===== --}}
     <div class="dash-header">
         <div class="dash-header-text">
             <span class="dash-badge">
-                <i class="fa-solid fa-bolt"></i> DEV FEST 2026 · 30 Nov — 04 Dic
+                <i class="fa-solid fa-bolt"></i> EXPO DEV 2026 · 30 Nov — 04 Dic
             </span>
             <h1 class="dash-title">Panel de Control</h1>
             <p class="dash-sub">
@@ -181,7 +181,7 @@
 @push('styles')
 <style>
     /* ==================================================
-       Dashboard DEV FEST 2026
+       Dashboard EXPO DEV 2026
        ================================================== */
 
     /* ---------- Encabezado de bienvenida ---------- */

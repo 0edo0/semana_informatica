@@ -6,11 +6,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- =============================================== --}}
-    {{--  DEV FEST 2026 · Layout de Administración (CMS) --}}
+    {{--  EXPO DEV 2026 · Layout de Administración (CMS) --}}
     {{--  Semana Informática DSI · Túpac Amaru · Cusco   --}}
     {{-- =============================================== --}}
 
-    <title>@yield('title', 'Panel de Control') · DEV FEST 2026 Admin</title>
+    <title>@yield('title', 'Panel de Control') · EXPO DEV 2026 Admin</title>
 
     {{-- Bootstrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     <style>
         /* ==================================================
-           DEV FEST 2026 Admin · Sistema de estilos base
+           EXPO DEV 2026 Admin · Sistema de estilos base
            ================================================== */
         :root{
             --adm-black: #050208;
@@ -373,9 +373,9 @@
     <aside class="admin-sidebar" id="adminSidebar">
 
         <a class="sidebar-brand" href="{{ route('admin.dashboard') }}">
-            <img src="{{ asset('images/logo_fest.png') }}" alt="Logo DEV FEST 2026" class="brand-logo">
+            <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV 2026" class="brand-logo">
             <span class="brand-text">
-                <span class="brand-name">DEV <span>FEST</span></span>
+                <span class="brand-name">EXPO <span>DEV</span></span>
                 <span class="brand-sub">Panel Admin</span>
             </span>
         </a>
@@ -433,7 +433,7 @@
         </nav>
 
         <div class="sidebar-event">
-            <span class="ev-title"><i class="fa-solid fa-bolt"></i> DEV FEST 2026</span>
+            <span class="ev-title"><i class="fa-solid fa-bolt"></i> EXPO DEV 2026</span>
             <span class="ev-date">30 Nov — 04 Dic · Cusco</span>
         </div>
     </aside>
@@ -491,7 +491,7 @@
         </main>
 
         <footer class="admin-footer">
-            <span>DEV FEST 2026 · Semana Informática DSI</span>
+            <span>EXPO DEV 2026 · Semana Informática DSI</span>
             <span>Instituto Túpac Amaru — Cusco</span>
         </footer>
     </div>

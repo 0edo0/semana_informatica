@@ -9,7 +9,7 @@
             <div class="modal-body p-5">
                 <!-- Logo y Título -->
                 <div class="text-center mb-4">
-                    <img src="{{ asset('images/logo_fest.png') }}" alt="DEV FEST Logo" style="width: 80px; filter: drop-shadow(0 0 15px rgba(147, 51, 234, 0.8));" class="mb-3 floating-logo">
+                    <img src="{{ asset('images/logo_fest.png') }}" alt="EXPO DEV Logo" style="width: 80px; filter: drop-shadow(0 0 15px rgba(147, 51, 234, 0.8));" class="mb-3 floating-logo">
                     <h3 class="text-white fw-bold" style="font-family: 'Outfit', sans-serif;">Acceso Administrativo</h3>
                     <p class="text-sand small">Ingresa tus credenciales para gestionar el evento.</p>
                 </div>

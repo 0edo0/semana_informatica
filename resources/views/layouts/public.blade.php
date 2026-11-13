@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Semana Informática DEV FEST 2026 — Carrera de Desarrollo de Sistemas de Información, Instituto Túpac Amaru, Cusco.">
-    <title>@yield('title', 'DEV FEST 2026 · Semana DSI — Túpac Amaru Cusco')</title>
+        content="Semana Informática EXPO DEV 2026 — Carrera de Desarrollo de Sistemas de Información, Instituto Túpac Amaru, Cusco.">
+    <title>@yield('title', 'EXPO DEV 2026 · Semana DSI — Túpac Amaru Cusco')</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     <style>
         /* ==========================================================
-           TEMA NEÓN FUTURISTA — DEV FEST 2026
+           TEMA NEÓN FUTURISTA — EXPO DEV 2026
            Se mantienen los MISMOS nombres de variables para que el
            resto de vistas que use var(--color-*) se adapte sola:
            · --color-terracotta pasa a ser el morado eléctrico (acción)
@@ -462,11 +462,11 @@
             <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="{{ route('home') }}">
                 <!-- Contenedor del logo. Le quitamos el borde y fondo para que se vea limpio tu PNG -->
                 <span class="me-2 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                    <img src="{{ asset('images/logo_fest.png') }}" alt="Logo DEV FEST"
+                    <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV"
                         style="width: 100%; height: 100%; object-fit: contain;">
                 </span>
                 <span>
-                    <span class="d-block lh-1 fs-5">DevFest <span class="text-neon">DSI</span></span>
+                    <span class="d-block lh-1 fs-5">Expo Dev <span class="text-neon">DSI</span></span>
                     <small class="text-sand lh-1" style="font-size: 0.7rem;">Túpac Amaru</small>
                 </span>
             </a>
@@ -510,7 +510,7 @@
                         <!-- Contenedor del logo en el footer, un poco más pequeño -->
                         <span class="me-2 d-inline-flex align-items-center justify-content-center"
                             style="width: 36px; height: 36px;">
-                            <img src="{{ asset('images/logo_fest.png') }}" alt="Logo DEV FEST"
+                            <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </span>
                         Semana <span class="text-neon">DSI</span> 2026
