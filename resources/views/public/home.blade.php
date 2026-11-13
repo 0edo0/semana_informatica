@@ -1,5 +1,5 @@
 {{-- ==========================================================================
-|   SEMANA INFORMÁTICA — DEV FEST 2026
+|   SEMANA INFORMÁTICA — DEV CON 2026
 |   Instituto de Educación Superior Túpac Amaru · Cusco
 |   Carrera: Desarrollo de Sistemas de Información (DSI)
 |   Vista:   resources/views/public/home.blade.php
@@ -27,7 +27,7 @@
 
                     <!-- LOGO flotante -->
                     <div class="logo-wrap mx-auto d-inline-block" data-aos="zoom-in" data-aos-duration="900">
-                        <img src="{{ asset('images/logo_fest.png') }}" alt="Logo DEV FEST 2026 - Semana Informática DSI" class="hero-logo img-fluid">
+                        <img src="{{ asset('images/logo_fest.png') }}" alt="Logo DEV CON 2026 - Semana Informática DSI" class="hero-logo img-fluid">
                     </div>
 
                     <div data-aos="fade-down" data-aos-delay="100">
@@ -39,7 +39,7 @@
 
                     <!-- Título gigante -->
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
-                        <span class="title-line">DEV FEST</span>
+                        <span class="title-line">DEV CON</span>
                         <span class="text-neon">2026</span>
                     </h1>
 
@@ -52,7 +52,7 @@
                     </p>
 
                     <!-- CUENTA REGRESIVA (glassmorphism) -->
-                    <div class="countdown-wrap" data-aos="fade-up" data-aos-delay="400" aria-label="Cuenta regresiva al DEV FEST 2026">
+                    <div class="countdown-wrap" data-aos="fade-up" data-aos-delay="400" aria-label="Cuenta regresiva al DEV CON 2026">
                         <div class="countdown-box">
                             <span id="cd-days" class="countdown-value">00</span>
                             <span class="countdown-label">Días</span>
@@ -125,7 +125,7 @@
                     Ejes que marcarán <span class="text-neon">el futuro</span>
                 </h2>
                 <p class="section-desc mx-auto">
-                    Cada jornada del DEV FEST está dedicada a una de las áreas que están
+                    Cada jornada del DEV CON está dedicada a una de las áreas que están
                     redefiniendo el mundo digital. Elige tu camino… o domínalos todos.
                 </p>
             </div>
@@ -203,7 +203,7 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="about-img-frame position-relative">
                         <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=1000&auto=format&fit=crop"
-                             alt="Cusco, Perú - ciudad imperial, sede del DEV FEST 2026"
+                             alt="Cusco, Perú - ciudad imperial, sede del DEV CON 2026"
                              class="about-img" loading="lazy">
                         <span class="about-img-chip">
                             <i class="fa-solid fa-location-dot me-2"></i> Cusco · Perú
@@ -218,7 +218,7 @@
                         Hecho en Cusco por la <span class="text-neon">carrera DSI</span>
                     </h2>
                     <p>
-                        La <strong>Semana Informática — DEV FEST 2026</strong> es el evento tecnológico
+                        La <strong>Semana Informática — DEV CON 2026</strong> es el evento tecnológico
                         más importante del año, organizado por la carrera de
                         <strong>Desarrollo de Sistemas de Información (DSI)</strong> del Instituto de
                         Educación Superior <strong>Túpac Amaru</strong> de Cusco. Durante una semana,
@@ -350,7 +350,7 @@
                     cdMinutes.textContent = '00';
                     cdSeconds.textContent = '00';
                     if (cdCaption) {
-                        cdCaption.textContent = '¡El DEV FEST 2026 ya comenzó! Nos vemos en el Instituto Túpac Amaru.';
+                        cdCaption.textContent = '¡El DEV CON 2026 ya comenzó! Nos vemos en el Instituto Túpac Amaru.';
                     }
                     if (countdownTimer) { clearInterval(countdownTimer); }
                     return;
