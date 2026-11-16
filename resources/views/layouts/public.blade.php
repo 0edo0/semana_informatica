@@ -531,10 +531,8 @@
                     <p class="small mb-2"><i class="fa-solid fa-location-dot me-2"
                             style="color: var(--color-sand);"></i> Cusco, Perú</p>
                     <div class="d-flex gap-3 mt-3 footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/expodev20.26/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@expo.dev5?_r=1&_t=ZS-9BSQ6eNRyXF" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
