@@ -77,7 +77,7 @@
                         para el gran inicio · lunes 30 de noviembre, 8:00 a. m.
                     </p>
 
-                    <!-- Botones -->
+                    <!-- Botones 
                     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" data-aos="fade-up" data-aos-delay="550">
                         <a href="#inscripcion" class="btn btn-neon btn-lg">
                             <i class="fa-solid fa-rocket me-2"></i> Inscríbete Ahora
@@ -85,7 +85,7 @@
                         <a href="#tarjetas" class="btn btn-ghost btn-lg">
                             <i class="fa-solid fa-circle-info me-2"></i> Explorar Evento
                         </a>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Columna derecha: IMAGEN 3D del androide con flotación -->
@@ -206,7 +206,7 @@
                              alt="Cusco, Perú - ciudad imperial, sede del EXPO DEV 2026"
                              class="about-img" loading="lazy">
                         <span class="about-img-chip">
-                            <i class="fa-solid fa-location-dot me-2"></i> Cusco · Perú
+                            <i class="fa-solid fa-location-dot me-2"></i> Cusco · Campus del Instituto Tupac Amaru
                         </span>
                     </div>
                 </div>
@@ -277,8 +277,7 @@
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>
                             Dirigido a los semestres <strong>2.º, 4.º y 6.º</strong> de la carrera de
-                            Desarrollo de Sistemas de Información. ¡Tu inscripción incluye acceso a
-                            todas las actividades!
+                            Desarrollo de Sistemas de Información.
                         </span>
                     </div>
                 </div>
@@ -303,11 +302,11 @@
                 <div class="cta-meta">
                     <span><i class="fa-solid fa-calendar-days"></i> 30 Nov — 04 Dic 2026</span>
                     <span><i class="fa-solid fa-location-dot"></i> Instituto Túpac Amaru · Cusco</span>
-                    <span><i class="fa-solid fa-clock"></i> Inicio: 8:00 a. m.</span>
+                    <span><i class="fa-solid fa-clock"></i> Inicio: 11:30 a. m.</span>
                 </div>
-                <a href="#" class="btn btn-neon btn-lg">
+                <!--<a href="#" class="btn btn-neon btn-lg">
                     <i class="fa-solid fa-rocket me-2"></i> Inscríbete Ahora
-                </a>
+                </a>-->
             </div>
         </div>
     </section>
