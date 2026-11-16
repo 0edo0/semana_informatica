@@ -202,7 +202,7 @@
                 <!-- Columna izquierda: imagen de Cusco -->
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="about-img-frame position-relative">
-                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=1000&auto=format&fit=crop"
+                        <img src="https://www.istta.edu.pe/img/gallery/fotos%20istta/CAMPUS/CAMPUS%20(1).JPG"
                              alt="Cusco, Perú - ciudad imperial, sede del EXPO DEV 2026"
                              class="about-img" loading="lazy">
                         <span class="about-img-chip">
