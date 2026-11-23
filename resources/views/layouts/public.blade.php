@@ -466,7 +466,7 @@
                         style="width: 100%; height: 100%; object-fit: contain;">
                 </span>
                 <span>
-                    <span class="d-block lh-1 fs-5">Expo Dev <span class="text-neon">DSI</span></span>
+                    <span class="d-block lh-1 fs-5">Expo <span class="text-neon">Dev</span></span>
                     <small class="text-sand lh-1" style="font-size: 0.7rem;">Túpac Amaru</small>
                 </span>
             </a>
@@ -478,8 +478,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Inicio</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="{{ route('schedule') }}">Cronograma</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('gallery') }}">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('schedule') }}">Cronograma</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="{{ route('gallery') }}">Galería</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('certificates.search') }}">Certificados</a>
                     </li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">

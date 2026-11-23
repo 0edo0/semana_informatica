@@ -394,6 +394,10 @@
                class="nav-item-admin {{ request()->routeIs('admin.students.*') ? 'active' : '' }}">
                 <i class="fa-solid fa-user-graduate"></i><span>Estudiantes</span>
             </a>
+            <a href="{{ route('admin.attendances.index') }}"
+               class="nav-item-admin {{ request()->routeIs('admin.attendances.*') ? 'active' : '' }}">
+                <i class="fa-solid fa-user-graduate"></i><span>Asistencia</span>
+            </a>
 
             <a href="{{ route('admin.activities.index') }}"
                class="nav-item-admin {{ request()->routeIs('admin.activities.*') ? 'active' : '' }}">

@@ -66,7 +66,7 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.log
 // Rutas Protegidas (Solo para administradores logueados)
 Route::prefix('admin')->middleware('admin')->group(function () {
     
-    // Dashboard Principal
+    // Dashboard Principald
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
 
     // CRUDs Básicos
@@ -79,6 +79,13 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('gallery', AdminGalleryController::class)->names('admin.gallery');
     Route::resource('materials', MaterialController::class)->names('admin.materials');
     Route::resource('surveys', AdminSurveyController::class)->names('admin.surveys');
+
+    // ✅ PRIMERO la ruta personalizada
+Route::get('attendances/reporte/exportar', [AttendanceController::class, 'export'])->name('admin.attendances.export');
+
+// ✅ DESPUÉS el resource
+Route::resource('attendances', AttendanceController::class)->names('admin.attendances')->except(['create', 'edit', 'show']);
+
 
     // Certificados (Lógica Especial)
     Route::resource('certificates', AdminCertificateController::class)->names('admin.certificates')->except(['create', 'edit', 'show']);

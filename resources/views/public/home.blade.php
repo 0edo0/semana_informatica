@@ -434,7 +434,7 @@
             background-color: var(--df-black) !important;
             color: #e9e4f5;
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+            overflow-x: clip; /* FIX: antes "hidden", rompía el navbar fijo en móvil */
         }
 
         h1, h2, h3, h4, h5, .hero-title, .section-title {
@@ -515,6 +515,7 @@
         ========================================================== */
         .hero-section {
             min-height: 100vh;
+            min-height: 100svh; /* FIX: altura real en móviles (barra del navegador) */
             padding: 5.5rem 0 3.5rem;
         }
 
@@ -1088,6 +1089,52 @@
             .countdown-sep { display: none; }
             .countdown-box { min-width: 74px; padding: .8rem .6rem .7rem; }
             .hero-logo { width: 96px; }
+        }
+
+        /* ==========================================================
+           FIX MÓVIL: navbar visible siempre + sin desbordamiento horizontal
+        ========================================================== */
+
+        /* Navbar siempre anclado arriba y por encima de todo */
+        .navbar {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1050 !important;
+        }
+
+        /* Botón hamburguesa visible sobre fondo oscuro */
+        .navbar-toggler {
+            border-color: rgba(192, 132, 252, .55) !important;
+        }
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 .2rem rgba(147, 51, 234, .35) !important;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23c084fc' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
+        @media (max-width: 991.98px) {
+            /* Menú desplegable legible en móvil */
+            .navbar-collapse {
+                background: rgba(5, 2, 8, .92);
+                border-radius: 0 0 16px 16px;
+                padding: .75rem 1rem;
+                margin-top: .5rem;
+            }
+
+            /* AOS: evitar que las animaciones laterales ensanchen la página.
+               Se mantienen animadas, pero entrando desde abajo. */
+            [data-aos="fade-left"],
+            [data-aos="fade-right"] {
+                transform: translate3d(0, 40px, 0) !important;
+            }
+            [data-aos="fade-left"].aos-animate,
+            [data-aos="fade-right"].aos-animate {
+                transform: translate3d(0, 0, 0) !important;
+            }
         }
 
         /* Accesibilidad: respetar preferencia de menos movimiento */
