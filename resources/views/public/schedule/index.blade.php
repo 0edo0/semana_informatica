@@ -101,10 +101,10 @@
                         <h2 class="day-title">{{ $day->title }}</h2>
                     </div>
 
-                    <span class="day-count">
+                    <!--<span class="day-count">
                         <i class="fa-solid fa-microphone-lines"></i>
                         {{ $day->activities->count() }} {{ $day->activities->count() === 1 ? 'ponencia' : 'ponencias' }}
-                    </span>
+                    </span>-->
                 </header>
 
                 <!-- Banners de ponencias del día -->
@@ -171,7 +171,7 @@
                                                 
                                                 @if(!empty($activity->speaker->cv_url))
                                                     <a href="{{ $activity->speaker->cv_url }}" target="_blank" rel="noopener noreferrer" class="spk-cv-btn" title="Ver Hoja de Vida de {{ $activity->speaker->name }}">
-                                                        <i class="fa-solid fa-file-pdf me-1"></i> CV
+                                                        <i class="fa-solid fa-file-pdf me-1"></i> Hoja de vida
                                                     </a>
                                                 @endif
                                             </div>
