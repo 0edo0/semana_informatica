@@ -4,19 +4,8 @@
 |
 |   Vista:  resources/views/public/schedule/index.blade.php
 |
-|   REDISEÑO tipo "cartel / banner" para las ponencias del cronograma:
-|   · Cada ponencia es un banner horizontal con imagen de fondo (estilo
-|     cartel de programa semanal).
-|   · La foto del ponente (photo_path) se usa como avatar Y como imagen
-|     de fondo del banner de su ponencia.
-|   · Si la imagen no existe o no carga, automáticamente se muestra una
-|     imagen por defecto de sistemas/tecnología (desde la web).
-|   · La lógica de base de datos NO cambia:
-|       $scheduleDays → $day->title / $day->date / $day->activities
-|       $activity     → title, start_time, end_time, description, speaker
-|       $activity->speaker → name, photo_path, profession
-|   · Mobile first: en pantallas pequeñas el banner se apila, la hora pasa
-|     arriba y todo queda legible sobre el fondo morado oscuro.
+|   REDISEÑO tipo "cartel / banner" para las ponencias del cronograma.
+|   Mobile first: en pantallas pequeñas el banner se apila.
 ========================================================================== --}}
 
 @extends('layouts.public')
@@ -29,8 +18,7 @@
         $MESES  = [1 => 'ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
         $SEMANA = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 
-        /* Acento de color por día (R, G, B) → se usa como rgb(var(--day-rgb))
-           y rgba(var(--day-rgb), .4) en los banners de ese día. */
+        /* Acento de color por día (R, G, B) */
         $DAY_RGB = [
             '147, 51, 234',   // Día 1 · púrpura eléctrico
             '192, 132, 252',  // Día 2 · violeta neón
@@ -39,9 +27,7 @@
             '168, 85, 247',   // Día 5 · púrpura suave
         ];
 
-        /* Imágenes por defecto relacionadas a SISTEMAS / TECNOLOGÍA.
-           Se usan cuando el ponente no tiene foto O cuando esa foto
-           falla al cargar (el JS de abajo hace el intercambio). */
+        /* Imágenes por defecto relacionadas a SISTEMAS / TECNOLOGÍA. */
         $DF_BG = [
             'https://images.unsplash.com/photo-1518770660439-4636195af496?q=80&w=1600&auto=format&fit=crop',
             'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop',
@@ -51,7 +37,7 @@
             'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1600&auto=format&fit=crop',
         ];
 
-        $dfImg = 0; /* contador global: varía la imagen por defecto de cada banner */
+        $dfImg = 0;
     @endphp
 
     <!-- ============================== HERO ============================== -->
@@ -136,8 +122,6 @@
                                 $fin = !empty($activity->end_time) ? \Carbon\Carbon::parse($activity->end_time) : null;
                                 $spk = $activity->speaker;
 
-                                /* Fondo del banner: foto del ponente; si no tiene o
-                                   falla la carga → imagen por defecto de sistemas. */
                                 $defaultImg = $DF_BG[$dfImg % count($DF_BG)];
                                 $bgUrl      = ($spk && !empty($spk->photo_path)) ? $spk->photo_path : $defaultImg;
                                 $fbUrl      = ($spk && !empty($spk->photo_path)) ? $defaultImg : $DF_BG[($dfImg + 1) % count($DF_BG)];
@@ -150,13 +134,12 @@
                                      style="--talk-img: url('{{ $bgUrl }}');"
                                      data-bg="{{ $bgUrl }}"
                                      data-fb="{{ $fbUrl }}">
-                                {{-- Capas del banner: imagen → tinte del día → velo de lectura --}}
                                 <span class="tb-bg" aria-hidden="true"></span>
                                 <span class="tb-accent" aria-hidden="true"></span>
                                 <span class="tb-shade" aria-hidden="true"></span>
 
                                 <div class="tb-grid">
-                                    <!-- Hora (estilo cartel: grande a la izquierda) -->
+                                    <!-- Hora -->
                                     <div class="tb-when">
                                         <span class="tb-weekday">{{ $SEMANA[(int) $schDate->format('w')] }}</span>
                                         <span class="tb-time-start">{{ $ini->format('H:i') }}</span>
@@ -174,26 +157,24 @@
                                         @endif
 
                                         @if(!empty($activity->speaker))
-                                            <!-- Chip de ponente sobre el banner -->
-                                                <div class="tb-speaker">
-                                                    <span class="spk-avatar">
-                                                        <span class="spk-initial">{{ strtoupper(mb_substr($activity->speaker->name ?? 'P', 0, 1)) }}</span>
-                                                    </span>
-                                                    <span class="spk-info">
-                                                        <span class="spk-label">Ponente</span>
-                                                        <span class="spk-name">{{ $activity->speaker->name }}</span>
-                                                        @if(!empty($activity->speaker->profession))
-                                                            <span class="spk-role">{{ $activity->speaker->profession }}</span>
-                                                        @endif
-                                                    </span>
-                                                    
-                                                    {{-- NUEVO BOTÓN DE CV: Solo se muestra si el ponente tiene cv_url --}}
-                                                    @if(!empty($activity->speaker->cv_url))
-                                                        <a href="{{ $activity->speaker->cv_url }}" target="_blank" rel="noopener noreferrer" class="spk-cv-btn" title="Ver Hoja de Vida de {{ $activity->speaker->name }}">
-                                                            <i class="fa-solid fa-file-pdf me-1"></i> hoja de vida
-                                                        </a>
+                                            <div class="tb-speaker">
+                                                <span class="spk-avatar">
+                                                    <span class="spk-initial">{{ strtoupper(mb_substr($activity->speaker->name ?? 'P', 0, 1)) }}</span>
+                                                </span>
+                                                <span class="spk-info">
+                                                    <span class="spk-label">Ponente</span>
+                                                    <span class="spk-name">{{ $activity->speaker->name }}</span>
+                                                    @if(!empty($activity->speaker->profession))
+                                                        <span class="spk-role">{{ $activity->speaker->profession }}</span>
                                                     @endif
-                                                </div>
+                                                </span>
+                                                
+                                                @if(!empty($activity->speaker->cv_url))
+                                                    <a href="{{ $activity->speaker->cv_url }}" target="_blank" rel="noopener noreferrer" class="spk-cv-btn" title="Ver Hoja de Vida de {{ $activity->speaker->name }}">
+                                                        <i class="fa-solid fa-file-pdf me-1"></i> CV
+                                                    </a>
+                                                @endif
+                                            </div>
                                         @endif
                                     </div>
                                 </div>
@@ -210,14 +191,14 @@
             </section>
         @endforelse
 
-        <!-- CTA final 
+        <!-- CTA final -->
         <section class="sch-cta text-center" data-aos="zoom-in">
             <h2 class="cta-title">¿Listo para no perderte nada?</h2>
             <p class="cta-sub">Asegura tu lugar en las ponencias y talleres del EXPODEV 2026.</p>
             <a href="{{ route('registration.create') }}" class="sch-btn-neon">
                 <i class="fa-solid fa-user-plus me-2"></i> Inscribirme ahora
             </a>
-        </section>-->
+        </section>
     </main>
 
 @endsection
@@ -278,8 +259,7 @@
     .day-banners { display: flex; flex-direction: column; gap: 1.05rem; }
 
     /* ================================================================
-       BANNER DE PONENCIA — estilo cartel con imagen de fondo
-       (capas: .tb-bg imagen → .tb-accent tinte del día → .tb-shade velo)
+       BANNER DE PONENCIA
     ================================================================ */
     .talk-banner {
         position: relative;
@@ -298,7 +278,6 @@
         border-color: rgba(var(--day-rgb), .80);
         box-shadow: 0 16px 38px rgba(0, 0, 0, .45), 0 0 44px rgba(var(--day-rgb), .40);
     }
-    /* Franja de color del día en el borde izquierdo (como el cartel) */
     .talk-banner::before {
         content: '';
         position: absolute;
@@ -336,7 +315,7 @@
     .tb-title { font-family: 'Outfit', sans-serif; font-size: 1.12rem; font-weight: 700; color: #fff; margin: 0; line-height: 1.35; text-shadow: 0 2px 10px rgba(0, 0, 0, .5); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     .tb-desc { color: var(--df-muted); font-size: .86rem; margin: .4rem 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-    /* Chip de ponente sobre el banner */
+    /* Chip de ponente */
     .tb-speaker { display: inline-flex; align-items: center; gap: .7rem; margin-top: .75rem; padding: .45rem .9rem .45rem .5rem; border-radius: 50rem; background: rgba(5, 2, 8, .55); border: 1px solid rgba(var(--day-rgb), .45); backdrop-filter: blur(6px); width: fit-content; max-width: 100%; transition: box-shadow .3s ease, border-color .3s ease; flex-wrap: wrap; }
     .tb-speaker:hover { border-color: rgba(var(--day-rgb), .80); box-shadow: 0 0 18px rgba(var(--day-rgb), .35); }
     .spk-avatar { position: relative; width: 42px; height: 42px; flex: 0 0 42px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(var(--day-rgb), .70); box-shadow: 0 0 12px rgba(var(--day-rgb), .50); }
@@ -347,7 +326,7 @@
     .spk-name { display: block; color: #fff; font-weight: 600; font-size: .88rem; line-height: 1.25; }
     .spk-role { display: block; font-size: .72rem; color: var(--df-muted); }
 
-    /* NUEVO: Botón de CV */
+    /* Botón de CV */
     .spk-cv-btn {
         display: inline-flex;
         align-items: center;
@@ -421,7 +400,24 @@
 
         .tb-title { font-size: 1rem; }
         .tb-desc { font-size: .82rem; -webkit-line-clamp: 3; }
-        .tb-speaker { margin-top: .55rem; }
+        
+        /* FIX: Evitar desbordamiento del ponente en móvil */
+        .tb-speaker { 
+            display: flex; 
+            width: 100%; 
+            border-radius: 16px; 
+            align-items: flex-start; 
+            padding: .65rem .8rem; 
+            gap: .6rem;
+        }
+        .spk-avatar { margin-top: 2px; }
+        .spk-info { 
+            flex: 1 1 140px; 
+            min-width: 0; 
+            overflow-wrap: break-word; 
+            word-break: break-word; 
+        }
+        .spk-cv-btn { margin-left: 0; margin-top: .3rem; }
     }
 
     @media (max-width: 575.98px) {
@@ -430,8 +426,6 @@
         .spk-avatar { width: 38px; height: 38px; flex-basis: 38px; }
         .spk-name { font-size: .84rem; }
         .talk-banner::before { width: 4px; }
-        /* Ajuste del botón CV en móvil */
-        .spk-cv-btn { font-size: .65rem; padding: .25rem .55rem; margin-left: .2rem; }
     }
 
     /* Accesibilidad: menos movimiento */
@@ -446,12 +440,6 @@
     document.addEventListener('DOMContentLoaded', function () {
         if (window.AOS && typeof AOS.refreshHard === 'function') { AOS.refreshHard(); }
 
-        /* ---------------------------------------------------------
-         | 1) FONDO DE CADA PONENCIA con respaldo automático:
-         |    se intenta cargar la imagen asignada (foto del ponente
-         |    o imagen por defecto); si la carga FALLA, se cambia por
-         |    la imagen de respaldo para que el banner nunca quede mal.
-         --------------------------------------------------------- */
         document.querySelectorAll('.talk-banner[data-bg]').forEach(function (banner) {
             var bg = banner.getAttribute('data-bg');
             var fb = banner.getAttribute('data-fb');
@@ -464,10 +452,6 @@
             probe.src = bg;
         });
 
-        /* ---------------------------------------------------------
-         | 2) SCROLLSPY: marca con .active el chip del día que está
-         |    visible en pantalla mientras el usuario hace scroll.
-         --------------------------------------------------------- */
         var chips  = Array.prototype.slice.call(document.querySelectorAll('.sch-chip'));
         var blocks = Array.prototype.slice.call(document.querySelectorAll('.day-block'));
         if ('IntersectionObserver' in window && chips.length && blocks.length) {
