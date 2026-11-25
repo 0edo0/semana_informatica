@@ -462,7 +462,7 @@
             <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="{{ route('home') }}">
                 <!-- Contenedor del logo. Le quitamos el borde y fondo para que se vea limpio tu PNG -->
                 <span class="me-2 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                    <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV"
+                    <img src="https://github.com/Gabriel-Alva/images-expodev/blob/main/logo_fest.png?raw=true" alt="Logo EXPO DEV"
                         style="width: 100%; height: 100%; object-fit: contain;">
                 </span>
                 <span>
@@ -510,7 +510,7 @@
                         <!-- Contenedor del logo en el footer, un poco más pequeño -->
                         <span class="me-2 d-inline-flex align-items-center justify-content-center"
                             style="width: 36px; height: 36px;">
-                            <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV"
+                            <img src="https://github.com/Gabriel-Alva/images-expodev/blob/main/logo_fest.png?raw=true" alt="Logo EXPO DEV"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </span>
                         Expo<span class="text-neon">Dev</span> 2026

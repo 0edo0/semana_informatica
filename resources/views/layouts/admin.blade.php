@@ -373,7 +373,7 @@
     <aside class="admin-sidebar" id="adminSidebar">
 
         <a class="sidebar-brand" href="{{ route('admin.dashboard') }}">
-            <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV 2026" class="brand-logo">
+            <img src="https://github.com/Gabriel-Alva/images-expodev/blob/main/logo_fest.png?raw=true" alt="Logo EXPO DEV 2026" class="brand-logo">
             <span class="brand-text">
                 <span class="brand-name">EXPO <span>DEV</span></span>
                 <span class="brand-sub">Panel Admin</span>

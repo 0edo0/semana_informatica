@@ -27,7 +27,7 @@
 
                     <!-- LOGO flotante (más grande para reemplazar el título) -->
                     <div class="logo-wrap mx-auto d-inline-block" data-aos="zoom-in" data-aos-duration="900">
-                        <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV 2026 - Semana Informática DSI" class="hero-logo img-fluid">
+                        <img src="https://github.com/Gabriel-Alva/images-expodev/blob/main/logo_fest.png?raw=true" alt="Logo EXPO DEV 2026 - Semana Informática DSI" class="hero-logo img-fluid">
                     </div>
 
                     <div data-aos="fade-down" data-aos-delay="100">
@@ -87,7 +87,7 @@
                     <div class="hero-robot mx-auto">
                         <div class="robot-glow" aria-hidden="true"></div>
                         <div class="robot-ring" aria-hidden="true"></div>
-                        <img src="{{ asset('images/inicio_lado.jpg') }}"
+                        <img src="https://github.com/Gabriel-Alva/images-expodev/blob/main/inicio_lado.jpg?raw=true"
                              alt="Androide de inteligencia artificial con ojos brillantes"
                              class="robot-img" loading="eager">
                         <span class="robot-chip robot-chip-main">
