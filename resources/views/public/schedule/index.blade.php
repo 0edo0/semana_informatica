@@ -210,14 +210,14 @@
             </section>
         @endforelse
 
-        <!-- CTA final -->
+        <!-- CTA final 
         <section class="sch-cta text-center" data-aos="zoom-in">
             <h2 class="cta-title">¿Listo para no perderte nada?</h2>
             <p class="cta-sub">Asegura tu lugar en las ponencias y talleres del EXPODEV 2026.</p>
             <a href="{{ route('registration.create') }}" class="sch-btn-neon">
                 <i class="fa-solid fa-user-plus me-2"></i> Inscribirme ahora
             </a>
-        </section>
+        </section>-->
     </main>
 
 @endsection
