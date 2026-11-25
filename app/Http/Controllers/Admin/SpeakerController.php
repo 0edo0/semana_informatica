@@ -34,6 +34,7 @@ class SpeakerController extends Controller
             'name' => 'required|string|max:255',
             'profession' => 'nullable|string|max:255',
             'bio' => 'nullable|string',
+            'cv_url' => 'nullable|url|max:255',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120'
         ]);
 
@@ -67,6 +68,7 @@ class SpeakerController extends Controller
             'name' => 'required|string|max:255',
             'profession' => 'nullable|string|max:255',
             'bio' => 'nullable|string',
+            'cv_url' => 'nullable|url|max:255',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120'
         ]);
 

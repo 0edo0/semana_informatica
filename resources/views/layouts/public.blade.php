@@ -466,8 +466,8 @@
                         style="width: 100%; height: 100%; object-fit: contain;">
                 </span>
                 <span>
-                    <span class="d-block lh-1 fs-5">Expo <span class="text-neon">Dev</span></span>
-                    <small class="text-sand lh-1" style="font-size: 0.7rem;">Túpac Amaru</small>
+                    <span class="d-block lh-1 fs-5">ExpoDev<span class="text-neon"> 2026</span></span>
+                    <small class="text-sand lh-1" style="font-size: 0.7rem;">IST Túpac Amaru</small>
                 </span>
             </a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
@@ -513,10 +513,10 @@
                             <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </span>
-                        Semana <span class="text-neon">DSI</span> 2026
+                        Expo<span class="text-neon">Dev</span> 2026
                     </h5>
-                    <p class="small opacity-75">Organizado por la carrera de Desarrollo de Sistemas de Información del
-                        Instituto Túpac Amaru de Cusco. Un espacio para la innovación y el futuro tecnológico.</p>
+                    <p class="small opacity-75">Organizado por la Programa de estudios de Desarrollo de Sistemas de Información del
+                        Instituto superior tecnologico Túpac Amaru de Cusco. Un espacio para la innovación y el futuro tecnológico.</p>
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5 class="text-white mb-3 fw-bold">Enlaces</h5>

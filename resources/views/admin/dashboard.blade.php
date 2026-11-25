@@ -17,7 +17,7 @@
             <h1 class="dash-title">Panel de Control</h1>
             <p class="dash-sub">
                 Bienvenido de nuevo, <strong>{{ auth('admin')->user()->name ?? 'Administrador' }}</strong>.
-                Así va la Semana Informática de la carrera DSI hoy.
+                Así va la Semana Informática de la Programa de estudios DSI hoy.
             </p>
         </div>
 

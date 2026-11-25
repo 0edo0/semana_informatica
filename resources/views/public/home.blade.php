@@ -1,7 +1,7 @@
 {{-- ==========================================================================
 |   SEMANA INFORMÁTICA — EXPO DEV 2026
 |   Instituto de Educación Superior Túpac Amaru · Cusco
-|   Carrera: Desarrollo de Sistemas de Información (DSI)
+|   Programa de estudios: Desarrollo de Sistemas de Información (DSI)
 |   Vista:   resources/views/public/home.blade.php
 |   Requiere en layouts/public.blade.php:
 |   @stack('styles') en <head> y @yield('content') en <body>
@@ -25,7 +25,7 @@
                 <!-- Columna izquierda: logo, título, countdown y CTAs -->
                 <div class="col-lg-7 text-center">
 
-                    <!-- LOGO flotante -->
+                    <!-- LOGO flotante (más grande para reemplazar el título) -->
                     <div class="logo-wrap mx-auto d-inline-block" data-aos="zoom-in" data-aos-duration="900">
                         <img src="{{ asset('images/logo_fest.png') }}" alt="Logo EXPO DEV 2026 - Semana Informática DSI" class="hero-logo img-fluid">
                     </div>
@@ -37,15 +37,9 @@
                         </span>
                     </div>
 
-                    <!-- Título gigante -->
-                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
-                        <span class="title-line">EXPO DEV</span>
-                        <span class="text-neon">2026</span>
-                    </h1>
-
                     <!-- Subtítulo -->
                     <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
-                        El futuro de la tecnología se construye hoy. Acompaña a la carrera de
+                        El futuro de la tecnología se construye hoy. Acompaña al Programa de estudios de
                         <span class="text-highlight">Desarrollo de Sistemas de Información</span> en la semana
                         más épica del Instituto Túpac Amaru: cinco días de código, inteligencia artificial
                         e innovación desde el corazón de <span class="text-highlight">Cusco</span>.
@@ -74,10 +68,10 @@
                         </div>
                     </div>
                     <p class="countdown-caption" id="cd-caption" data-aos="fade-up" data-aos-delay="450">
-                        para el gran inicio · lunes 30 de noviembre, 8:00 a. m.
+                        para el gran inicio · lunes 30 de noviembre, 11:00 a. m.
                     </p>
 
-                    <!-- Botones 
+                    <!-- Botones (comentados) 
                     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" data-aos="fade-up" data-aos-delay="550">
                         <a href="#inscripcion" class="btn btn-neon btn-lg">
                             <i class="fa-solid fa-rocket me-2"></i> Inscríbete Ahora
@@ -132,59 +126,62 @@
 
             <div class="row g-4">
 
-                <!-- Tarjeta 1: Inteligencia Artificial y Robótica -->
+                <!-- Tarjeta 1: Desarrollo Web y Seguridad -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <article class="tilt-card h-100">
                         <div class="card-top-accent" aria-hidden="true"></div>
-                        <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
-                        <h3>Inteligencia Artificial y Robótica</h3>
-                        <p>
-                            Sumérgete en el mundo de los modelos generativos, el machine learning y la
-                            automatización. Descubre cómo los agentes inteligentes y los androides
-                            están transformando todas las industrias del planeta.
-                        </p>
-                        <div class="chip-group">
-                            <span>Machine Learning</span>
-                            <span>Chatbots</span>
-                            <span>Robótica</span>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Tarjeta 2: Desarrollo Web Full-Stack -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <article class="tilt-card h-100">
-                        <div class="card-top-accent" aria-hidden="true"></div>
                         <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                        <h3>Desarrollo Web Full-Stack</h3>
+                        <h3>Desarrollo Web y Seguridad</h3>
                         <p>
-                            Domina el ciclo completo de construcción de aplicaciones modernas:
-                            desde backends con APIs robustas hasta interfaces reactivas que
-                            enamoran a los usuarios. Del código al despliegue.
+                            Aprende a construir aplicaciones seguras y eficientes con el framework Laravel,
+                            y descubre cómo aplicar las Tecnologías de la Información y Comunicación (TIC)
+                            en proyectos reales.
                         </p>
                         <div class="chip-group">
                             <span>Laravel</span>
-                            <span>React</span>
-                            <span>APIs REST</span>
+                            <span>Seguridad Web</span>
+                            <span>TIC</span>
+                            <span>Optimización</span>
                         </div>
                     </article>
                 </div>
 
-                <!-- Tarjeta 3: Ciberseguridad -->
+                <!-- Tarjeta 2: Inteligencia Artificial y Redes -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <article class="tilt-card h-100">
+                        <div class="card-top-accent" aria-hidden="true"></div>
+                        <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>Inteligencia Artificial y Redes</h3>
+                        <p>
+                            Explora la automatización inteligente de infraestructuras de red mediante agentes
+                            de inteligencia artificial, con una experiencia práctica usando OpenCode y GNS3.
+                            
+                        </p>
+                        <div class="chip-group">
+                            <span>IA</span>
+                            <span>Redes</span>
+                            <span>OpenCode</span>
+                            <span>GNS3</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta 3: Transformación Digital y Gestión -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <article class="tilt-card h-100">
                         <div class="card-top-accent" aria-hidden="true"></div>
-                        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3>Ciberseguridad</h3>
+                        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Transformación Digital y Gestión</h3>
                         <p>
-                            Aprende a pensar como un hacker ético: explora técnicas de pentesting,
-                            protección de redes y análisis forense para convertirte en el guardián
-                            que defiende el mundo digital de las amenazas.
+                            Conoce experiencias reales de transformación digital en el Gobierno Regional de Cusco
+                            y aprende a gestionar proyectos de desarrollo de software de alta complejidad.
+                           
                         </p>
                         <div class="chip-group">
-                            <span>Hacking Ético</span>
-                            <span>Pentesting</span>
-                            <span>Forense</span>
+                            <span>Transformación Digital</span>
+                            <span>Gestión de Proyectos</span>
+                            <span>Gobierno</span>
+                            <span>Cusco</span>
                         </div>
                     </article>
                 </div>
@@ -206,20 +203,20 @@
                              alt="Cusco, Perú - ciudad imperial, sede del EXPO DEV 2026"
                              class="about-img" loading="lazy">
                         <span class="about-img-chip">
-                            <i class="fa-solid fa-location-dot me-2"></i> Cusco · Campus del Instituto Tupac Amaru
+                            <i class="fa-solid fa-location-dot me-2"></i> Cusco · Campus del Instituto Túpac Amaru
                         </span>
                     </div>
                 </div>
 
-                <!-- Columna derecha: texto sobre el Instituto y la carrera DSI -->
+                <!-- Columna derecha: texto sobre el Instituto y el Programa de estudios DSI -->
                 <div class="col-lg-6 about-text" data-aos="fade-left" data-aos-delay="150">
                     <span class="section-kicker">Sobre el evento</span>
                     <h2 class="section-title">
-                        Hecho en Cusco por la <span class="text-neon">carrera DSI</span>
+                        Hecho en Cusco por el <span class="text-neon">Programa de estudios DSI</span>
                     </h2>
                     <p>
                         La <strong>Semana Informática — EXPO DEV 2026</strong> es el evento tecnológico
-                        más importante del año, organizado por la carrera de
+                        más importante del año, organizado por el Programa de estudios de
                         <strong>Desarrollo de Sistemas de Información (DSI)</strong> del Instituto de
                         Educación Superior <strong>Túpac Amaru</strong> de Cusco. Durante una semana,
                         el instituto se transforma en el punto de encuentro entre estudiantes, docentes
@@ -227,9 +224,6 @@
                     </p>
                     <p>
                         Del <strong>lunes 30 de noviembre al viernes 04 de diciembre de 2026</strong>,
-                        vive ponencias magistrales, talleres prácticos, competencias de programación y
-                        una hackatón épica, todo en un ambiente 100% futurista pensado para inspirar a
-                        la próxima generación de desarrolladores cusqueños.
                     </p>
 
                     <!-- Características con iconos FontAwesome -->
@@ -256,8 +250,8 @@
                             <div class="feature-item h-100">
                                 <i class="fa-solid fa-trophy"></i>
                                 <div>
-                                    <h4>Hackatón y premios</h4>
-                                    <p>Compite en equipos, resuelve retos reales y gana premios increíbles.</p>
+                                    <h4>Premios</h4>
+                                    <p>Compite respondiendo preguntas para ganar premios increíbles.</p>
                                 </div>
                             </div>
                         </div>
@@ -276,7 +270,7 @@
                     <div class="semester-note">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <span>
-                            Dirigido a los semestres <strong>2.º, 4.º y 6.º</strong> de la carrera de
+                            Dirigido a los semestres <strong>2.º, 4.º y 6.º</strong> del Programa de estudios de
                             Desarrollo de Sistemas de Información.
                         </span>
                     </div>
@@ -302,7 +296,7 @@
                 <div class="cta-meta">
                     <span><i class="fa-solid fa-calendar-days"></i> 30 Nov — 04 Dic 2026</span>
                     <span><i class="fa-solid fa-location-dot"></i> Instituto Túpac Amaru · Cusco</span>
-                    <span><i class="fa-solid fa-clock"></i> Inicio: 11:30 a. m.</span>
+                    <span><i class="fa-solid fa-clock"></i> Inicio: 11:00 a. m.</span>
                 </div>
                 <!--<a href="#" class="btn btn-neon btn-lg">
                     <i class="fa-solid fa-rocket me-2"></i> Inscríbete Ahora
@@ -323,9 +317,9 @@
 
             /* ==========================================================
                1. CUENTA REGRESIVA en tiempo real
-               Fecha objetivo: 30 de noviembre de 2026, 08:00:00
+               Fecha objetivo: 30 de noviembre de 2026, 11:00:00
             ========================================================== */
-            var targetDate = new Date('2026-11-30T08:00:00').getTime();
+            var targetDate = new Date('2026-11-30T11:00:00').getTime();
 
             var cdDays    = document.getElementById('cd-days');
             var cdHours   = document.getElementById('cd-hours');
@@ -544,18 +538,20 @@
             to   { transform: translate(40px, -30px) scale(1.12); }
         }
 
-        /* LOGO flotante con hover */
+        /* LOGO flotante con hover (tamaño aumentado) */
         .logo-wrap {
             animation: floatY 5s ease-in-out infinite;
+            margin-bottom: 1.5rem;
         }
         .hero-logo {
-            width: 98px;
-            filter: drop-shadow(0 0 18px rgba(147, 51, 234, .55));
+            width: 500px;
+            max-width: 100%;
+            filter: drop-shadow(0 0 18px rgb(244, 242, 245));
             transition: all .3s ease;
         }
         .logo-wrap:hover .hero-logo {
             transform: scale(1.08) rotate(3deg);
-            filter: drop-shadow(0 0 32px rgba(192, 132, 252, .95));
+            filter: drop-shadow(0 0 32px rgba(255, 255, 255, 0.95));
         }
 
         .hero-badge {
@@ -575,7 +571,7 @@
             margin-bottom: 1.2rem;
         }
 
-        /* Título gigante neón */
+        /* Título gigante neón (ya no se usa, pero se mantiene por si acaso) */
         .hero-title {
             font-size: clamp(3rem, 8vw, 6.2rem);
             font-weight: 800;
@@ -1088,7 +1084,7 @@
         @media (max-width: 575.98px) {
             .countdown-sep { display: none; }
             .countdown-box { min-width: 74px; padding: .8rem .6rem .7rem; }
-            .hero-logo { width: 96px; }
+            .hero-logo { width: 140px; }
         }
 
         /* ==========================================================

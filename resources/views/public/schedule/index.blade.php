@@ -186,6 +186,13 @@
                                                             <span class="spk-role">{{ $activity->speaker->profession }}</span>
                                                         @endif
                                                     </span>
+                                                    
+                                                    {{-- NUEVO BOTÓN DE CV: Solo se muestra si el ponente tiene cv_url --}}
+                                                    @if(!empty($activity->speaker->cv_url))
+                                                        <a href="{{ $activity->speaker->cv_url }}" target="_blank" rel="noopener noreferrer" class="spk-cv-btn" title="Ver Hoja de Vida de {{ $activity->speaker->name }}">
+                                                            <i class="fa-solid fa-file-pdf me-1"></i> hoja de vida
+                                                        </a>
+                                                    @endif
                                                 </div>
                                         @endif
                                     </div>
@@ -330,7 +337,7 @@
     .tb-desc { color: var(--df-muted); font-size: .86rem; margin: .4rem 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
     /* Chip de ponente sobre el banner */
-    .tb-speaker { display: inline-flex; align-items: center; gap: .7rem; margin-top: .75rem; padding: .45rem .9rem .45rem .5rem; border-radius: 50rem; background: rgba(5, 2, 8, .55); border: 1px solid rgba(var(--day-rgb), .45); backdrop-filter: blur(6px); width: fit-content; max-width: 100%; transition: box-shadow .3s ease, border-color .3s ease; }
+    .tb-speaker { display: inline-flex; align-items: center; gap: .7rem; margin-top: .75rem; padding: .45rem .9rem .45rem .5rem; border-radius: 50rem; background: rgba(5, 2, 8, .55); border: 1px solid rgba(var(--day-rgb), .45); backdrop-filter: blur(6px); width: fit-content; max-width: 100%; transition: box-shadow .3s ease, border-color .3s ease; flex-wrap: wrap; }
     .tb-speaker:hover { border-color: rgba(var(--day-rgb), .80); box-shadow: 0 0 18px rgba(var(--day-rgb), .35); }
     .spk-avatar { position: relative; width: 42px; height: 42px; flex: 0 0 42px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(var(--day-rgb), .70); box-shadow: 0 0 12px rgba(var(--day-rgb), .50); }
     .spk-initial { position: absolute; inset: 0; display: grid; place-items: center; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; background: linear-gradient(135deg, var(--df-purple-600), var(--df-purple-900)); }
@@ -339,6 +346,30 @@
     .spk-label { display: block; font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--df-violet); opacity: .85; }
     .spk-name { display: block; color: #fff; font-weight: 600; font-size: .88rem; line-height: 1.25; }
     .spk-role { display: block; font-size: .72rem; color: var(--df-muted); }
+
+    /* NUEVO: Botón de CV */
+    .spk-cv-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: .4rem;
+        padding: .3rem .7rem;
+        border-radius: 50rem;
+        font-size: .72rem;
+        font-weight: 600;
+        color: #fff;
+        background: rgba(var(--day-rgb), .20);
+        border: 1px solid rgba(var(--day-rgb), .55);
+        text-decoration: none;
+        transition: all .3s ease;
+        white-space: nowrap;
+    }
+    .spk-cv-btn:hover {
+        background: rgba(var(--day-rgb), .45);
+        box-shadow: 0 0 12px rgba(var(--day-rgb), .55);
+        transform: translateY(-1px);
+        color: #fff;
+    }
 
     /* ======================= ESTADOS VACÍOS ======================== */
     .day-empty { text-align: center; padding: 2rem 1rem; border: 1px dashed rgba(var(--day-rgb), .45); border-radius: 20px; background: rgba(var(--day-rgb), .05); }
@@ -399,6 +430,8 @@
         .spk-avatar { width: 38px; height: 38px; flex-basis: 38px; }
         .spk-name { font-size: .84rem; }
         .talk-banner::before { width: 4px; }
+        /* Ajuste del botón CV en móvil */
+        .spk-cv-btn { font-size: .65rem; padding: .25rem .55rem; margin-left: .2rem; }
     }
 
     /* Accesibilidad: menos movimiento */

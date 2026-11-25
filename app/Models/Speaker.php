@@ -14,6 +14,7 @@ class Speaker extends Model
         'name', 
         'profession', 
         'bio', 
+        'cv_url',
         'photo_path'
     ];
 

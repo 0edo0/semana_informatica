@@ -63,6 +63,7 @@
                                             data-name="{{ $speaker->name }}"
                                             data-profession="{{ $speaker->profession }}"
                                             data-bio="{{ $speaker->bio }}"
+                                            data-cv_url="{{ $speaker->cv_url }}"
                                             data-photo="{{ $speaker->photo_path ? asset('storage/' . $speaker->photo_path) : '' }}">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </button>
@@ -114,6 +115,12 @@
                             <label class="form-label" for="createBio">Biografía</label>
                             <textarea class="form-control" id="createBio" name="bio" rows="3" placeholder="Breve descripción del ponente...">{{ old('bio') }}</textarea>
                         </div>
+                        {{-- NUEVO CAMPO: CV URL --}}
+                        <div class="mb-3">
+                            <label class="form-label" for="createCvUrl">Hoja de Vida (URL)</label>
+                            <input type="url" class="form-control" id="createCvUrl" name="cv_url" value="{{ old('cv_url') }}" placeholder="https://drive.google.com/...">
+                            <div class="form-text">Enlace opcional al CV del ponente.</div>
+                        </div>
                         <div class="mb-3">
                             <label class="form-label" for="createPhoto">Foto</label>
                             <input type="file" class="form-control" id="createPhoto" name="photo" accept="image/*">
@@ -164,6 +171,12 @@
                         <div class="mb-3">
                             <label class="form-label" for="editBio">Biografía</label>
                             <textarea class="form-control" id="editBio" name="bio" rows="3"></textarea>
+                        </div>
+                        {{-- NUEVO CAMPO: CV URL --}}
+                        <div class="mb-3">
+                            <label class="form-label" for="editCvUrl">Hoja de Vida (URL)</label>
+                            <input type="url" class="form-control" id="editCvUrl" name="cv_url" placeholder="https://drive.google.com/...">
+                            <div class="form-text">Enlace opcional al CV del ponente.</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="editPhoto">Reemplazar foto (opcional)</label>
@@ -400,6 +413,7 @@
         const editName         = document.getElementById('editName');
         const editProfession   = document.getElementById('editProfession');
         const editBio          = document.getElementById('editBio');
+        const editCvUrl        = document.getElementById('editCvUrl'); // NUEVO
         const editPhotoInput   = document.getElementById('editPhoto');
         const editCurrentPhoto = document.getElementById('editCurrentPhoto');
         const editNameDisplay  = document.getElementById('editSpeakerNameDisplay');
@@ -431,6 +445,7 @@
                 editName.value       = data.name || '';
                 editProfession.value = data.profession || '';
                 editBio.value        = data.bio || '';
+                editCvUrl.value      = data.cv_url || ''; // NUEVO
                 editPhotoInput.value = ''; // limpiar input de archivo
 
                 // 3. Foto actual
