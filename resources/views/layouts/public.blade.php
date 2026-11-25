@@ -522,7 +522,7 @@
                     <h5 class="text-white mb-3 fw-bold">Enlaces</h5>
                     <ul class="list-unstyled small footer-quicklinks">
                         <li class="mb-2"><a href="{{ route('schedule') }}">Cronograma</a></li>
-                        <li class="mb-2"><a href="{{ route('registration.create') }}">Inscripciones</a></li>
+                        <!--<li class="mb-2"><a href="{{ route('registration.create') }}">Inscripciones</a></li>-->
                         <li class="mb-2"><a href="{{ route('certificates.search') }}">Certificados</a></li>
                     </ul>
                 </div>
